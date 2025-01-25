@@ -1,0 +1,236 @@
+/* Estilos Gerais */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: italic;
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Texto branco */
+  overflow-x: hidden;
+}
+
+/* Estilos do Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8); /* Fundo do cabeçalho */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+.nav {
+  display: flex;
+  justify-content: flex-start; /* Alinhar o menu à esquerda */
+  width: 100%;
+}
+
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.nav ul li {
+  margin: 0 15px;
+}
+
+.nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+
+.nav ul li a:hover {
+  color: #e65454;
+}
+
+/* Estilos da Seção de Produtos */
+#produtos {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(
+    5,
+    1fr
+  ); /* 5 colunas para telas maiores que 1200px */
+  gap: 20px; /* Espaçamento entre os cards */
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 100%; /* Ajusta para o grid */
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff; /* Card branco */
+  color: #000; /* Texto preto */
+  transition: transform 0.3s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.card-image {
+  width: 100%;
+  height: 200px; /* Altura do card alongada */
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Assegura que a imagem cubra o card sem distorcer */
+  border-radius: 10px 10px 0 0;
+}
+
+.card-content {
+  padding: 10px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+}
+
+.card-price {
+  color: #e67e22;
+  font-size: 1.1em;
+}
+
+/* Estilos do Rodapé */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(
+      5,
+      1fr
+    ); /* 5 colunas para telas entre 992px e 1200px */
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 4 colunas para telas entre 768px e 992px */
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: repeat(
+      4,
+      1fr
+    ); /* 4 colunas para telas entre 576px e 768px */
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    font-size: 20px; /* Reduz o tamanho do logo */
+  }
+
+  .nav ul {
+    flex-direction: column; /* Alinhar o menu verticalmente */
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    display: none;
+  }
+
+  .nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  }
+
+  .menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    grid-template-columns: repeat(
+      3,
+      1fr
+    ); /* 3 colunas para telas menores que 576px */
+  }
+
+  .logo {
+    font-size: 16px; /* Reduz o tamanho do logo */
+  }
+
+  .nav ul {
+    top: 50px; /* Ajusta a posição do menu em telas muito pequenas */
+  }
+
+  .menu-toggle {
+    top: 15px;
+  }
+}
