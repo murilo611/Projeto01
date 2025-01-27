@@ -86,9 +86,9 @@ header {
 .container {
   display: grid;
   grid-template-columns: repeat(
-    5,
-    1fr
-  ); /* 5 colunas para telas maiores que 1200px */
+    auto-fit,
+    minmax(200px, 1fr)
+  ); /* Ajuste flexível de colunas */
   gap: 20px; /* Espaçamento entre os cards */
   justify-content: center;
   padding: 20px;
@@ -150,27 +150,27 @@ footer {
 @media (max-width: 1200px) {
   .container {
     grid-template-columns: repeat(
-      5,
+      3,
       1fr
-    ); /* 5 colunas para telas entre 992px e 1200px */
+    ); /* 3 colunas para telas entre 992px e 1200px */
   }
 }
 
 @media (max-width: 992px) {
   .container {
     grid-template-columns: repeat(
-      4,
+      2,
       1fr
-    ); /* 4 colunas para telas entre 768px e 992px */
+    ); /* 2 colunas para telas entre 768px e 992px */
   }
 }
 
 @media (max-width: 768px) {
   .container {
     grid-template-columns: repeat(
-      4,
+      1,
       1fr
-    ); /* 4 colunas para telas entre 576px e 768px */
+    ); /* 1 coluna para telas entre 576px e 768px */
   }
 
   .logo {
@@ -217,9 +217,9 @@ footer {
 @media (max-width: 576px) {
   .container {
     grid-template-columns: repeat(
-      3,
+      1,
       1fr
-    ); /* 3 colunas para telas menores que 576px */
+    ); /* 1 coluna para telas menores que 576px */
   }
 
   .logo {
@@ -235,6 +235,53 @@ footer {
   }
 }
 
+/* Estilos para a seção #informacoes */
+#informacoes {
+  padding: 50px 0; /* Espaçamento vertical */
+  background-color: #111; /* Fundo escuro diferenciado */
+  color: #fff; /* Cor do texto */
+  text-align: center; /* Centralizar texto */
+}
+
+#informacoes .container1-informacoes {
+  width: 80%; /* Garantir que o contêiner ocupe 80% da largura */
+  margin: 0 auto; /* Centralizar o contêiner */
+}
+
+#informacoes h2 {
+  font-size: 2.5em; /* Tamanho da fonte do título */
+  margin-bottom: 20px; /* Espaço inferior do título */
+}
+
+#informacoes p {
+  font-size: 1.2em; /* Tamanho da fonte do texto */
+  margin-bottom: 40px; /* Espaço inferior do texto */
+}
+
+#informacoes .cta-btn2-container {
+  display: flex; /* Usar Flexbox */
+  justify-content: center; /* Centralizar o botão */
+  margin-top: 20px; /* Adicionar margem superior para espaçamento */
+}
+
+#informacoes .cta-btn2 {
+  display: inline-block;
+  padding: 12px 30px;
+  background-color: #ffcc00;
+  color: #000; /* Cor do texto */
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#informacoes .cta-btn2:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+}
+
+/* Estilos para a seção #contato */
 #contato {
   padding: 50px 0; /* Espaçamento vertical */
   background-color: #000000; /* Fundo escuro */

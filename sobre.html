@@ -32,14 +32,6 @@
           ducimus maxime facere magni aspernatur dicta, quae itaque doloremque a
           sequi quos architecto ex modi? Voluptatibus labore eum quae animi
           similique.. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Harum sunt esse ad, mollitia assumenda asperiores nostrum repudiandae?
-          Perferendis sit dolores atque, obcaecati voluptas dolorem eligendi
-          molestiae quia, dignissimos corrupti vero! Lorem ipsum dolor sit amet
-          consectetur adipisicing elit. Dolores voluptatibus ipsa in illum iste
-          laboriosam cupiditate, consequatur suscipit nemo consectetur.
-          Aspernatur asperiores voluptatum vel eligendi aliquam fugiat officiis
-          tenetur dolores? Lorem ipsum dolor sit amet consectetur adipisicing
-          elit.
         </p>
         <a href="./formulario.html" class="button">Entre em contato</a>
       </div>
@@ -84,6 +76,18 @@
         </div>
       </div>
     </section>
+
+    <!-- Scripts (se houver) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav");
+
+        menuToggle.addEventListener("click", function () {
+          nav.classList.toggle("active"); // Adicionar ou remover a classe 'active'
+        });
+      });
+    </script>
 
     <footer>
       <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
