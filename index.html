@@ -9,7 +9,7 @@
       href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,400;0,500;0,700;1,300&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
-    <title>Meu Site</title>
+    <title>Projeto01</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -18,10 +18,12 @@
       <div class="menu-toggle"><span></span><span></span><span></span></div>
       <nav class="nav">
         <ul>
-          <li><a href="#home">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a href="./produtos.html">Produtos</a></li>
-          <li><a href="#sobre">Sobre Nós</a></li>
+          <li><a href="./sobre.html">Sobre Nós</a></li>
           <li><a href="#contato">Contato</a></li>
+          <li><a href="./galeria.html">Galeria</a></li>
+          <li><a href="./formulario.html">Formulario</a></li>
         </ul>
       </nav>
     </header>
@@ -34,64 +36,90 @@
       <div class="video-overlay">
         <h1>Sua Frase Aqui</h1>
         <p>Algum texto descritivo adicional aqui para complementar o título.</p>
-        <button class="cta-btn1">Orçamento</button>
+        <a href="formulario.html" class="cta-btn1">Orçamento</a>
       </div>
     </div>
 
     <section id="home">
       <div class="content">
         <div class="carousel">
-          <img src="./fotos/EXEMPLARES/AF - I - 1.png" alt="Imagem 1" class="static-image active" />
-          <img src="./fotos/EXEMPLARES/AF - I - 2.png" alt="Imagem 2" class="static-image" />
-          <img src="./fotos/EXEMPLARES/AF - I - 3.png" alt="Imagem 3" class="static-image" />
-          <img src="./fotos/EXEMPLARES/C90 - I - 1.png" alt="Imagem 4" class="static-image" />
-          <img src="./fotos/EXEMPLARES/CTE - I - 1.png" alt="Imagem 5" class="static-image" />
+          <img
+            src="./fotos/sem fundo 1.png"
+            alt="Imagem 3"
+            class="static-image"
+          />
+          <img
+            src="./fotos/sem fundo 2.png"
+            alt="Imagem 4"
+            class="static-image"
+          />
+          <img
+            src="./fotos/sem fundo 3.png"
+            alt="Imagem 5"
+            class="static-image"
+          />
+          <img
+            src="./fotos/sem fundo.jpg"
+            alt="Imagem 5"
+            class="static-image"
+          />
+          <img
+            src="./fotos/sem fundo 1.png"
+            alt="Imagem 5"
+            class="static-image"
+          />
         </div>
         <div class="text-content">
           <h1>Nossos Produtos</h1>
-          <p>Descubra os nossos produtos e serviços incríveis. Cada item foi criado com cuidado e atenção aos detalhes para oferecer a melhor qualidade.</p>
-          <a href="./produtos.html" class="cta-btn2">Ver mais Produtos</a> 
-        </div>
-      </div>
-    </section>
-    
-    
-    
-    
-    
-    
-    
-
-   
-    <section id="sobre">
-      <div class="content1">
-        <div class="overlay">
-          <h2>Nossa Historia</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident eius ut quae
-            sapiente dolore quasi ullam distinctio ex deserunt explicabo aut optio non, mai.
+            Descubra os nossos produtos e serviços incríveis. Cada item foi
+            criado com cuidado e atenção aos detalhes para oferecer a melhor
+            qualidade.
           </p>
-          <a href="#more" class="btn-primary">Sobre Nós</a>
         </div>
-        <img src="./fotos/OBRA 2 - ANÇÃ/portaa.jpg" alt="Linha Premium" />
       </div>
     </section>
-    
-    
 
-
+    <div class="cta-btn2-container">
+      <a href="./produtos.html" class="cta-btn2">Ver Mais Produtos</a>
+    </div>
 
     <section id="obras">
       <div class="fobras">
         <h1>Resultados</h1>
         <p>Descubra os nossos produtos e serviços incríveis.</p>
         <div class="image-container">
-          <img src="./fotos/OBRA 2 - ANÇÃ/direita.jpg" alt="Imagem 1" class="static-image" />
-          <img src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg" alt="Imagem 2" class="static-image" />
+          <img
+            src="./fotos/OBRA 2 - ANÇÃ/direita.jpg"
+            alt="Imagem 1"
+            class="static-image"
+          />
+          <img
+            src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg"
+            alt="Imagem 2"
+            class="static-image"
+          />
+        </div>
+        <div class="cta-btn2-container">
+          <a href="./galeria.html" class="cta-btn2">Galeria</a>
         </div>
       </div>
     </section>
 
+    <section id="sobre">
+      <div class="content1">
+        <div class="overlay">
+          <h2>Nossa Historia</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
+            eius ut quae sapiente dolore quasi ullam distinctio ex deserunt
+            explicabo aut optio non, mai.
+          </p>
+          <a href="./sobre.html" class="btn-primary">Sobre Nós</a>
+        </div>
+        <img src="./fotos/OBRA 2 - ANÇÃ/portaa.jpg" alt="Linha Premium" />
+      </div>
+    </section>
 
     <section id="contato">
       <div class="content">
@@ -99,25 +127,53 @@
           <h2>Contato</h2>
           <p>Email: contato@meusite.com</p>
           <p>Telefone: (00) 1234-5678</p>
+          <div class="social-media">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/facebook_2504903.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/instagram_2111463.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://wa.me/0012345678"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/whatsapp_2504957.png" alt="WhatsApp" />
+            </a>
+          </div>
         </div>
         <div class="image">
-          <img src="./fotos/contato.jpg" alt="Contato" />
+          <img src="./fotos/ebook_11899176.png" alt="Contato" />
         </div>
       </div>
     </section>
 
-
-
-
-        <h2>Contato</h2>
-        <p>Email: contato@meusite.com</p>
-      </div>
-    </section>
     <footer>
       <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Botão do WhatsApp Flutuante -->
+    <a
+      href="https://wa.me/0012345678"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-float"
+    >
+      <img src="./fotos/whatsapp_2504957.png" alt="WhatsApp" />
+    </a>
 
+    <script src="script.js"></script>
   </body>
 </html>

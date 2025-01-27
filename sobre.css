@@ -1,0 +1,229 @@
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: "Poppins", serif;
+  font-weight: 300;
+  font-style: italic;
+  background-color: #000; /* Fundo preto */
+  color: #fff; /* Texto branco */
+  overflow-x: hidden;
+} /* Estilos do Cabeçalho */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.8); /* Fundo do cabeçalho */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff; /* Cor branca para o logo */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: #fff; /* Cor branca */
+  margin: 4px 0;
+  transition: 0.3s;
+}
+.nav {
+  display: flex;
+  justify-content: flex-start; /* Alinhar o menu à esquerda */
+  width: 100%;
+  margin-left: auto; /* Garantir que o menu comece no lado esquerdo */
+}
+.nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+.nav ul li {
+  margin: 0 15px;
+}
+.nav ul li a {
+  color: #fff; /* Cor branca */
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s;
+}
+.nav ul li a:hover {
+  color: #e6b800; /* Sombra dourada ao passar o mouse */
+} /* Estilos para dispositivos móveis */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex; /* Mostrar o ícone do menu */
+  }
+  .nav {
+    display: none; /* Esconder o menu por padrão */
+    flex-direction: column; /* Organizar itens verticalmente */
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fundo do menu */
+    position: absolute;
+    top: 70px; /* Abaixo do cabeçalho */
+    left: 0;
+    z-index: 999;
+  }
+  .nav.active {
+    display: flex; /* Mostrar o menu quando ativo */
+  }
+  .nav ul {
+    flex-direction: column; /* Organizar itens verticalmente */
+  }
+  .nav ul li {
+    margin: 10px 0; /* Espaço entre os itens do menu */
+    text-align: center; /* Centralizar os itens */
+  }
+} /* Estilos para a seção "Sobre Nós" */
+.background {
+  background-image: url("./fotos/2.jpg");
+  height: 100vh; /* Usar 100% da altura da viewport */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  color: white;
+}
+.content {
+  background-color: rgba(0, 0, 0, 0.7); /* Fundo semitransparente mais escuro */
+  padding: 40px;
+  border-radius: 15px;
+  max-width: 600px;
+  width: 80%;
+}
+.content h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+.content p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+.button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: #ffcc00;
+  color: #000;
+  font-weight: bold;
+  text-decoration: none; /* Remove o sublinhado */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 40px auto 0 auto; /* Aumenta o espaço acima do botão */
+  display: inline-block; /* Permite que a âncora seja exibida como um botão */
+  transition: background-color 0.3s;
+}
+.button:hover {
+  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+} /* Espaço para a seção de Contato */
+.contato-section {
+  padding: 50px;
+  background-color: #000; /* Fundo preto para contrastar com a seção acima */
+  color: #fff; /* Texto branco */
+}
+
+#contato {
+  padding: 50px 0; /* Espaçamento vertical */
+  background-color: #000000; /* Fundo escuro */
+  color: #fcfcfc; /* Cor do texto */
+}
+
+#contato .content {
+  display: flex; /* Usar Flexbox */
+  align-items: center; /* Alinhar itens verticalmente no centro */
+  justify-content: space-between; /* Espaçar itens uniformemente */
+  width: 80%; /* Garantir que o contêiner ocupe 80% da largura */
+  margin: 0 auto; /* Centralizar o contêiner */
+}
+
+#contato .text {
+  flex: 1; /* Fazer o texto ocupar 1 unidade de espaço flexível */
+  display: flex; /* Usar Flexbox */
+  flex-direction: column; /* Direção da coluna */
+  justify-content: center; /* Centralizar verticalmente */
+  margin-right: 20px; /* Adicionar margem à direita para afastar do contêiner das imagens */
+}
+
+#contato .text h2 {
+  font-size: 2em; /* Tamanho da fonte do título */
+  margin-bottom: 20px; /* Espaço inferior do título */
+  text-align: left; /* Alinhar texto à esquerda */
+}
+
+#contato .text p {
+  font-size: 1.2em; /* Tamanho da fonte dos parágrafos */
+  margin-bottom: 10px; /* Espaço inferior dos parágrafos */
+  text-align: left; /* Alinhar texto à esquerda */
+}
+
+#contato .social-media {
+  display: flex; /* Usar Flexbox */
+  gap: 10px; /* Espaçamento entre ícones */
+  margin-left: 20px; /* Adicionar margem à esquerda para alinhamento */
+  align-items: center; /* Alinhar itens verticalmente no centro */
+}
+
+#contato .social-icon img {
+  width: 40px; /* Largura dos ícones */
+  height: 40px; /* Altura dos ícones */
+  transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+#contato .social-icon img:hover {
+  transform: scale(1.1); /* Aumentar ícone ao passar o mouse */
+}
+
+#contato .image {
+  flex: 1; /* Fazer a imagem ocupar 1 unidade de espaço flexível */
+  text-align: center; /* Centralizar a imagem */
+}
+
+#contato .image img {
+  max-width: 50%; /* Garantir que a imagem ocupe 50% da largura */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  #contato .content {
+    flex-direction: column; /* Empilhar os itens verticalmente */
+    align-items: center; /* Centralizar itens no eixo vertical */
+  }
+
+  #contato .text {
+    text-align: center; /* Centralizar texto em telas menores */
+  }
+
+  #contato .image {
+    margin-top: 20px; /* Adicionar margem superior à imagem */
+  }
+}
+
+/* Estilos do Rodapé */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #333;
+}

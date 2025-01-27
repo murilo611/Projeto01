@@ -234,3 +234,106 @@ footer {
     top: 15px;
   }
 }
+
+#contato {
+  padding: 50px 0; /* Espaçamento vertical */
+  background-color: #000000; /* Fundo escuro */
+  color: #fcfcfc; /* Cor do texto */
+}
+
+#contato .content {
+  display: flex; /* Usar Flexbox */
+  align-items: center; /* Alinhar itens verticalmente no centro */
+  justify-content: space-between; /* Espaçar itens uniformemente */
+  width: 80%; /* Garantir que o contêiner ocupe 80% da largura */
+  margin: 0 auto; /* Centralizar o contêiner */
+}
+
+#contato .text {
+  flex: 1; /* Fazer o texto ocupar 1 unidade de espaço flexível */
+  display: flex; /* Usar Flexbox */
+  flex-direction: column; /* Direção da coluna */
+  justify-content: center; /* Centralizar verticalmente */
+  margin-right: 20px; /* Adicionar margem à direita para afastar do contêiner das imagens */
+}
+
+#contato .text h2 {
+  font-size: 2em; /* Tamanho da fonte do título */
+  margin-bottom: 20px; /* Espaço inferior do título */
+  text-align: left; /* Alinhar texto à esquerda */
+}
+
+#contato .text p {
+  font-size: 1.2em; /* Tamanho da fonte dos parágrafos */
+  margin-bottom: 10px; /* Espaço inferior dos parágrafos */
+  text-align: left; /* Alinhar texto à esquerda */
+}
+
+#contato .social-media {
+  display: flex; /* Usar Flexbox */
+  gap: 10px; /* Espaçamento entre ícones */
+  margin-left: 20px; /* Adicionar margem à esquerda para alinhamento */
+  align-items: center; /* Alinhar itens verticalmente no centro */
+}
+
+#contato .social-icon img {
+  width: 40px; /* Largura dos ícones */
+  height: 40px; /* Altura dos ícones */
+  transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
+}
+
+#contato .social-icon img:hover {
+  transform: scale(1.1); /* Aumentar ícone ao passar o mouse */
+}
+
+#contato .image {
+  flex: 1; /* Fazer a imagem ocupar 1 unidade de espaço flexível */
+  text-align: center; /* Centralizar a imagem */
+}
+
+#contato .image img {
+  max-width: 50%; /* Garantir que a imagem ocupe 50% da largura */
+  border-radius: 8px; /* Bordas arredondadas */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  #contato .content {
+    flex-direction: column; /* Empilhar os itens verticalmente */
+    align-items: center; /* Centralizar itens no eixo vertical */
+  }
+
+  #contato .text {
+    text-align: center; /* Centralizar texto em telas menores */
+  }
+
+  #contato .image {
+    margin-top: 20px; /* Adicionar margem superior à imagem */
+  }
+}
+
+.whatsapp-float {
+  position: fixed; /* Fixo na tela */
+  bottom: 20px; /* Distância da borda inferior */
+  right: 20px; /* Distância da borda direita */
+  z-index: 100; /* Garantir que fique acima de outros elementos */
+  width: 60px; /* Largura do ícone */
+  height: 60px; /* Altura do ícone */
+  display: flex; /* Flexbox */
+  align-items: center; /* Alinhar itens verticalmente no centro */
+  justify-content: center; /* Centralizar itens horizontalmente */
+  background-color: #80b19288; /* Cor de fundo do WhatsApp */
+  border-radius: 50%; /* Forma circular */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
+  transition: transform 0.3s ease; /* Transição suave */
+}
+
+.whatsapp-float img {
+  width: 30px; /* Ajustar a largura do ícone */
+  height: 30px; /* Ajustar a altura do ícone */
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1); /* Aumentar o ícone ao passar o mouse */
+}

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulário de Contato</title>
+    <link rel="stylesheet" href="formulario.css" />
+  </head>
+  <body>
+    <!-- Menu da Página Principal -->
+    <header>
+      <div class="logo">LOGO</div>
+      <div class="menu-toggle"><span></span><span></span><span></span></div>
+      <nav class="nav">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./produtos.html">Produtos</a></li>
+          <li><a href="./sobre.html">Sobre Nós</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="./galeria.html">Galeria</a></li>
+          <li><a href="./formulario.html">Formulario</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Seção do Formulário -->
+    <section id="formulario">
+      <div class="container">
+        <h1>Entre em Contato Conosco</h1>
+        <p>
+          Preencha o formulário abaixo para enviar sua mensagem. Vamos adorar
+          ouvir de você!
+        </p>
+        <form action="submit_form.php" method="post" class="form">
+          <div class="form-group">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required />
+          </div>
+          <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea
+              id="mensagem"
+              name="mensagem"
+              rows="5"
+              required
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn-submit">Enviar Mensagem</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Botão do WhatsApp Flutuante -->
+    <a
+      href="https://wa.me/0012345678"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-float"
+    >
+      <img src="./fotos/whatsapp_2504957.png" alt="WhatsApp" />
+    </a>
+
+    <section id="contato">
+      <div class="content">
+        <div class="text">
+          <h2>Contato</h2>
+          <p>Email: contato@meusite.com</p>
+          <p>Telefone: (00) 1234-5678</p>
+          <div class="social-media">
+            <a
+              href="https://www.facebook.com"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/facebook_2504903.png" alt="Facebook" />
+            </a>
+            <a
+              href="https://www.instagram.com"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/instagram_2111463.png" alt="Instagram" />
+            </a>
+            <a
+              href="https://wa.me/0012345678"
+              target="_blank"
+              rel="noopener"
+              class="social-icon"
+            >
+              <img src="./fotos/whatsapp_2504957.png" alt="WhatsApp" />
+            </a>
+          </div>
+        </div>
+        <div class="image">
+          <img src="./fotos/ebook_11899176.png" alt="Contato" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Scripts (se houver) -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const menuToggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector(".nav");
+
+        menuToggle.addEventListener("click", function () {
+          nav.classList.toggle("active"); // Adicionar ou remover a classe 'active'
+        });
+      });
+    </script>
+  </body>
+</html>
