@@ -35,7 +35,7 @@ header {
 }
 
 .menu-toggle {
-  display: none;
+  display: flex;
   flex-direction: column;
   cursor: pointer;
 }
@@ -49,9 +49,13 @@ header {
 }
 
 .nav {
-  display: flex;
+  display: none;
   justify-content: flex-start; /* Alinhar o menu à esquerda */
   width: 100%;
+}
+
+.nav.active {
+  display: flex;
 }
 
 .nav ul {
@@ -78,18 +82,7 @@ header {
 
 /* Estilos responsivos para Menu Toggle e Nav */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: flex;
-    position: absolute;
-    top: 5px;
-    left: 20px;
-  }
-
   .nav {
-    display: none;
-  }
-  .nav.active {
-    display: flex;
     flex-direction: column;
     position: fixed;
     top: 60px;
@@ -108,13 +101,15 @@ header {
 /* Estilos do Container de Vídeo */
 .video-container {
   position: relative;
-  top: 60px; /* Ajuste conforme necessário */
   width: 100%;
-  height: 500px; /* Ajuste conforme necessário */
+  height: 100vh; /* Ocupa toda a altura da viewport */
   overflow: hidden;
 }
 
 #background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -122,44 +117,25 @@ header {
 
 .video-overlay {
   position: absolute;
-  top: 20%;
-  left: 10%;
-  transform: translate(-10%, -20%);
-  text-align: left;
+  top: 50%; /* Centralizar verticalmente */
+  left: 50%; /* Centralizar horizontalmente */
+  transform: translate(-50%, -50%); /* Ajustar para centralização */
+  text-align: center;
   color: #b47d7d;
   max-width: 300px; /* Limitar a largura do texto */
 }
 
 .video-overlay h1 {
   color: #ffffff;
-  font-size: 1.5rem; /* Ajustar o tamanho da fonte conforme necessário */
+  font-size: 2.5rem; /* Ajustar o tamanho da fonte conforme necessário */
   margin-bottom: 10px;
-  text-align: left; /* Alinhar texto à esquerda */
+  text-align: center; /* Centralizar texto */
 }
 
 .video-overlay p {
-  color: #f7f7f7f6;
+  color: #f7f7f7;
   font-size: 1rem;
   margin-bottom: 20px;
-}
-
-/* Estilos do Botão */
-.cta-btn1 {
-  padding: 10px 20px;
-  font-size: 1.2rem;
-  background-color: #ffcc00;
-  color: #000;
-  font-weight: bold;
-  text-decoration: none; /* Remove o sublinhado */
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  margin: 40px auto 0 auto; /* Aumenta o espaço acima do botão */
-  transition: background-color 0.3s;
-}
-
-.cta-btn1:hover {
-  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
 }
 
 /* Estilos de Conteúdo */
@@ -192,7 +168,7 @@ section#home {
 .carousel {
   position: relative;
   width: 100%;
-  max-width: 500px;
+  max-width: 700px; /* Aumentar a largura máxima */
   margin: 0 auto; /* Centralizar o carrossel */
   overflow: hidden; /* Ocultar imagens fora da área visível */
   border-radius: 8px; /* Bordas arredondadas */
@@ -201,7 +177,7 @@ section#home {
 
 .carousel img {
   width: 100%; /* Ajustar a largura da imagem */
-  height: 300px; /* Definir uma altura fixa */
+  height: 400px; /* Aumentar a altura */
   object-fit: contain; /* Garantir que as imagens se ajustem ao espaço sem cortar */
   display: none; /* Esconder todas as imagens inicialmente */
   transition: opacity 0.5s ease-in-out; /* Transição suave */
@@ -232,7 +208,7 @@ section#home {
 
 /* Estilos da Imagem */
 .image-container {
-  flex: 0 0 200px; /* Imagem ocupa 200px de largura fixa */
+  flex: 0 0 250px; /* Aumentar a largura fixa */
   margin-right: 20px; /* Espaçamento direito da imagem */
 }
 
@@ -247,18 +223,18 @@ section#home {
 .cta-btn2 {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #ffcc00;
+  background-color: #f8f8f8;
   color: #000;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
+  box-shadow: 0 4px 10px rgba(4, 0, 255, 0.4);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .cta-btn2:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+  box-shadow: 0 6px 15px rgba(0, 26, 255, 0.6);
 }
 
 /* Centralizar o contêiner do botão */
@@ -278,7 +254,7 @@ section#home {
 
   .carousel img {
     width: 100%; /* Ajustar a largura da imagem para 100% */
-    height: 200px; /* Ajustar a altura da imagem */
+    height: 300px; /* Ajustar a altura da imagem */
   }
 
   .text-content {
@@ -310,7 +286,7 @@ section#home {
 
   .carousel img {
     width: 100%; /* Ajustar a largura da imagem para 100% */
-    height: 200px; /* Ajustar a altura da imagem */
+    height: 300px; /* Ajustar a altura da imagem */
   }
 
   .text-content h1 {

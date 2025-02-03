@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Código do Menu Responsivo
   const menuToggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav ul");
+  const nav = document.querySelector(".nav");
 
   menuToggle.addEventListener("click", function () {
     nav.classList.toggle("active");
@@ -20,13 +20,4 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   setInterval(showNextImage, 2000); // Mudar de imagem a cada 2 segundos
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-  const menuToggle = document.querySelector(".menu-toggle");
-  const nav = document.querySelector(".nav");
-
-  menuToggle.addEventListener("click", function () {
-    nav.classList.toggle("active"); // Adicionar ou remover a classe 'active'
-  });
 });
