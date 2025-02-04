@@ -36,9 +36,10 @@ header {
 }
 
 .menu-toggle {
-  display: none;
+  display: flex; /* Mostrar o menu hambúrguer em todos os tamanhos de tela */
   flex-direction: column;
   cursor: pointer;
+  z-index: 20; /* Garantir que o menu-toggle esteja acima do menu */
 }
 
 .menu-toggle span {
@@ -50,20 +51,25 @@ header {
 }
 
 .nav {
-  display: flex;
+  display: none; /* Esconder o menu padrão */
   justify-content: flex-start; /* Alinhar o menu à esquerda */
   width: 100%;
+  position: absolute; /* Definir o posicionamento absoluto */
+  top: 50px; /* Ajustar a posição do menu */
+  left: 0;
+  background-color: #000; /* Fundo escuro para o menu */
+  flex-direction: column; /* Alterar para coluna */
+  z-index: 10;
 }
 
 .nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .nav ul li {
-  margin: 0 15px;
+  margin: 15px 0;
 }
 
 .nav ul li a {
@@ -75,6 +81,29 @@ header {
 
 .nav ul li a:hover {
   color: #e65454;
+}
+
+/* Estilos para exibir o menu padrão em telas grandes */
+@media (min-width: 768px) {
+  .nav {
+    display: flex; /* Mostrar o menu padrão em telas grandes */
+    position: static; /* Ajustar o posicionamento para estático */
+    flex-direction: row; /* Alterar para linha */
+    background-color: transparent; /* Remover fundo escuro */
+    justify-content: flex-start;
+  }
+
+  .nav ul {
+    display: flex;
+  }
+
+  .nav ul li {
+    margin: 0 15px;
+  }
+
+  .nav ul li a {
+    color: #fff;
+  }
 }
 
 /* Estilos da Seção de Produtos */

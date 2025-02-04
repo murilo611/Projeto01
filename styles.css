@@ -318,9 +318,9 @@ section#obras {
 }
 
 .fobras {
-  width: 90%; /* Reduzir a largura do contêiner para 90% */
-  max-width: 1200px; /* Definir uma largura máxima */
-  margin: 0 auto; /* Centralizar o contêiner */
+  width: 100%; /* Garantir que o contêiner ocupe 100% da largura da tela */
+  max-width: 100%; /* Remover a largura máxima */
+  margin: 0; /* Remover margem */
   padding: 0; /* Remover padding */
 }
 
@@ -338,10 +338,10 @@ section#obras {
 
 .static-image {
   flex: 0 0 100%; /* Garantir que cada imagem ocupe 100% do container */
-  height: auto; /* Manter a proporção da imagem */
+  height: 100vh; /* Ajustar a altura da imagem para 100% da altura da viewport */
   object-fit: cover; /* Garantir que as imagens se ajustem corretamente */
-  border-radius: 8px; /* Bordas arredondadas */
-  margin: 0 auto; /* Centralizar a imagem dentro do contêiner */
+  border-radius: 0; /* Remover bordas arredondadas */
+  margin: 0; /* Remover margens */
 }
 
 .prev-btn,
@@ -352,11 +352,13 @@ section#obras {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fff;
   border: none;
-  padding: 10px;
+  padding: 10px 15px; /* Ajustar padding para um visual mais elegante */
   cursor: pointer;
   border-radius: 50%;
   font-size: 18px;
   z-index: 10; /* Garantir que os botões estejam acima das imagens */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição suave */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adicionar sombra para dar profundidade */
 }
 
 .prev-btn {
@@ -369,7 +371,15 @@ section#obras {
 
 .prev-btn:hover,
 .next-btn:hover {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Mudar cor de fundo ao passar o mouse */
+  color: #000; /* Mudar cor do texto ao passar o mouse */
+  transform: translateY(-50%) scale(1.1); /* Aumentar ligeiramente o tamanho ao passar o mouse */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Intensificar sombra ao passar o mouse */
 }
 
 /* Estilo Geral */
