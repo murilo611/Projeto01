@@ -6,6 +6,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <link
       href="https://fonts.googleapis.com/css2?family=Playwrite+IN:wght@100..400&family=Poppins:ital,wght@0,400;0,500;0,700;1,300&family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
       rel="stylesheet"
     />
@@ -87,17 +93,26 @@
       <div class="fobras">
         <h1>Resultados</h1>
         <p>Descubra os nossos produtos e serviços incríveis.</p>
-        <div class="image-container">
-          <img
-            src="./fotos/OBRA 2 - ANÇÃ/direita.jpg"
-            alt="Imagem 1"
-            class="static-image"
-          />
-          <img
-            src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg"
-            alt="Imagem 2"
-            class="static-image"
-          />
+        <div class="image-container" id="carousel-obras">
+          <button class="prev-btn">&#10094;</button>
+          <div class="carousel-images">
+            <img
+              src="./fotos/OBRA 2 - ANÇÃ/direita.jpg"
+              alt="Imagem 1"
+              class="static-image"
+            />
+            <img
+              src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg"
+              alt="Imagem 2"
+              class="static-image"
+            />
+            <img
+              src="./fotos/OBRA 2 - ANÇÃ/direita.jpg"
+              alt="Imagem 1"
+              class="static-image"
+            />
+          </div>
+          <button class="next-btn">&#10095;</button>
         </div>
         <div class="cta-btn2-container">
           <a href="./galeria.html" class="cta-btn2">Galeria</a>
