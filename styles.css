@@ -18,7 +18,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
+  padding: 3px;
   background: rgba(0, 0, 0, 0.8); /* Fundo do cabeçalho */
   position: fixed;
   width: 100%;
@@ -32,6 +32,12 @@ header {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+}
+.logo img {
+  width: 80px; /* Ajuste a largura conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+  display: block;
+  margin: 0 auto; /* Centraliza a imagem horizontalmente */
 }
 
 .menu-toggle {
@@ -77,7 +83,7 @@ header {
 }
 
 .nav ul li a:hover {
-  color: #e65454;
+  color: #122594;
 }
 
 /* Estilos responsivos para Menu Toggle e Nav */
@@ -114,34 +120,41 @@ header {
   height: 100%;
   object-fit: cover;
 }
+.video-container::after {
+  content: ""; /* Necessário para pseudo-elementos */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px; /* Ajuste a altura do gradiente conforme necessário */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
+  pointer-events: none; /* Permite que eventos de mouse passem para o vídeo */
+}
 
 .video-overlay {
   position: absolute;
-  top: 50%; /* Centralizar verticalmente */
-  left: 50%; /* Centralizar horizontalmente */
-  transform: translate(-50%, -50%); /* Ajustar para centralização */
-  text-align: center;
-  color: #b47d7d;
-  max-width: 300px; /* Limitar a largura do texto */
+  top: 10%; /* Ajuste conforme necessário */
+  left: 0%; /* Ajuste conforme necessário */
+  transform: translate(0, 0); /* Ajuste conforme necessário */
+  z-index: 2; /* Garantir que o texto fique acima do vídeo */
+  width: auto; /* Ajuste conforme necessário */
+  max-width: 300px; /* Limitar a largura do contêiner */
+  padding: 10px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
 }
 
 .video-overlay h1 {
-  color: #ffffff;
-  font-size: 2.5rem; /* Ajustar o tamanho da fonte conforme necessário */
+  color: #eeebeb;
+  font-size: 2rem; /* Ajustar o tamanho da fonte conforme necessário */
   margin-bottom: 10px;
-  text-align: center; /* Centralizar texto */
+  text-align: left; /* Alinhar o texto à esquerda */
 }
 
 .video-overlay p {
   color: #f7f7f7;
-  font-size: 1rem;
-  margin-bottom: 20px;
-}
-
-/* Estilos de Conteúdo */
-.content {
-  text-align: center;
-  padding: 50px;
+  font-size: 1rem; /* Ajustar o tamanho da fonte conforme necessário */
+  margin-bottom: 10px;
+  text-align: left; /* Alinhar o texto à esquerda */
 }
 
 /* Seção "Home" */
@@ -310,55 +323,113 @@ section#home {
   }
 }
 
+/* Estilos da seção */
+#informacoes {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #000; /* Opcional: definir um fundo para contraste */
+}
+
+#informacoes .container {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#informacoes h2 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+#informacoes p {
+  font-size: 1.2em;
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+/* Container da imagem */
+.imagem-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.imagem-central {
+  width: 100%;
+  height: auto;
+  display: block;
+  opacity: 0; /* Inicia invisível para a animação */
+  transform: translateY(50px); /* Inicia deslocada para baixo */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+}
+
+/* Classe para ativar a animação */
+.aparecer {
+  opacity: 1;
+  transform: translateY(0); /* Move para a posição original */
+}
+
+/* Quando a classe 'aparecer' é adicionada */
+.aparecer {
+  opacity: 1;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 section#obras {
-  padding: 30px 0; /* Reduzir o espaçamento vertical */
-  background-color: #000; /* Fundo escuro elegante */
-  color: #fff; /* Texto branco */
-  text-align: center; /* Centralizar texto */
+  padding: 0;
+  margin: 0;
 }
 
 .fobras {
-  width: 100%; /* Garantir que o contêiner ocupe 100% da largura da tela */
-  max-width: 100%; /* Remover a largura máxima */
-  margin: 0; /* Remover margem */
-  padding: 0; /* Remover padding */
+  text-align: center;
+  padding: 20px 0; /* Espaçamento vertical */
 }
 
-.image-container {
+.carousel-container {
   position: relative;
-  width: 100%;
+  overflow: hidden;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.carousel-track-container {
   overflow: hidden;
 }
 
-.carousel-images {
+.carousel-track {
   display: flex;
   transition: transform 0.5s ease-in-out;
-  width: 100%; /* Garantir que o contêiner ocupe 100% da largura disponível */
 }
 
-.static-image {
-  flex: 0 0 100%; /* Garantir que cada imagem ocupe 100% do container */
-  height: 100vh; /* Ajustar a altura da imagem para 100% da altura da viewport */
-  object-fit: cover; /* Garantir que as imagens se ajustem corretamente */
-  border-radius: 0; /* Remover bordas arredondadas */
-  margin: 0; /* Remover margens */
+.carousel-slide {
+  min-width: calc(100% / 2.5); /* Exibe 2.5 imagens */
+  flex: 0 0 calc(100% / 2.5);
 }
 
+.carousel-slide img {
+  width: 100%;
+  display: block;
+}
+
+/* Botões de navegação */
 .prev-btn,
 .next-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
   border: none;
-  padding: 10px 15px; /* Ajustar padding para um visual mais elegante */
+  color: #fff;
+  font-size: 2rem;
+  padding: 10px;
   cursor: pointer;
-  border-radius: 50%;
-  font-size: 18px;
-  z-index: 10; /* Garantir que os botões estejam acima das imagens */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Adicionar transição suave */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Adicionar sombra para dar profundidade */
+  z-index: 100;
 }
 
 .prev-btn {
@@ -367,19 +438,6 @@ section#obras {
 
 .next-btn {
   right: 10px;
-}
-
-.prev-btn:hover,
-.next-btn:hover {
-  background-color: rgba(
-    255,
-    255,
-    255,
-    0.8
-  ); /* Mudar cor de fundo ao passar o mouse */
-  color: #000; /* Mudar cor do texto ao passar o mouse */
-  transform: translateY(-50%) scale(1.1); /* Aumentar ligeiramente o tamanho ao passar o mouse */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Intensificar sombra ao passar o mouse */
 }
 
 /* Estilo Geral */
@@ -432,7 +490,7 @@ section#obras {
 .overlay h2 {
   font-size: 2.5rem;
   margin-bottom: 20px;
-  color: #ffcc00; /* Destaque dourado */
+  color: #f5f5f5; /* Destaque dourado */
   text-transform: uppercase;
   letter-spacing: 2px;
 }
@@ -448,7 +506,7 @@ section#obras {
 .btn-primary {
   display: inline-block;
   padding: 12px 30px;
-  background-color: #ffcc00;
+  background-color: #f3f3f3;
   color: #000;
   text-decoration: none;
   border-radius: 8px;
@@ -494,52 +552,6 @@ section#obras {
   .overlay p {
     font-size: 0.8rem;
   }
-}
-
-/* Estilos para a seção #informacoes */
-#informacoes {
-  padding: 50px 0; /* Espaçamento vertical */
-  background-color: #000; /* Fundo escuro diferenciado */
-  color: #fff; /* Cor do texto */
-  text-align: center; /* Centralizar texto */
-}
-
-#informacoes .container1-informacoes {
-  width: 80%; /* Garantir que o contêiner ocupe 80% da largura */
-  margin: 0 auto; /* Centralizar o contêiner */
-}
-
-#informacoes h2 {
-  font-size: 2.5em; /* Tamanho da fonte do título */
-  margin-bottom: 20px; /* Espaço inferior do título */
-}
-
-#informacoes p {
-  font-size: 1.2em; /* Tamanho da fonte do texto */
-  margin-bottom: 40px; /* Espaço inferior do texto */
-}
-
-#informacoes .cta-btn2-container {
-  display: flex; /* Usar Flexbox */
-  justify-content: center; /* Centralizar o botão */
-  margin-top: 20px; /* Adicionar margem superior para espaçamento */
-}
-
-#informacoes .cta-btn2 {
-  display: inline-block;
-  padding: 12px 30px;
-  background-color: #ffcc00;
-  color: #000; /* Cor do texto */
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-#informacoes .cta-btn2:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
 }
 
 #contato {
@@ -643,11 +655,4 @@ section#obras {
 
 .whatsapp-float:hover {
   transform: scale(1.1); /* Aumentar o ícone ao passar o mouse */
-}
-
-/* Estilos do Rodapé */
-footer {
-  text-align: center;
-  padding: 10px;
-  background-color: #333;
 }

@@ -20,30 +20,36 @@
   </head>
   <body>
     <header>
-      <div class="logo">LOGO</div>
+      <div class="logo">
+        <img src="./fotos/LOGO.png" alt="Logo">
+      </div>
       <div class="menu-toggle"><span></span><span></span><span></span></div>
       <nav class="nav">
         <ul>
           <li><a href="./index.html">Home</a></li>
           <li><a href="./produtos.html">Produtos</a></li>
           <li><a href="./sobre.html">Sobre Nós</a></li>
-          <li><a href="#contato">Contato</a></li>
           <li><a href="./galeria.html">Galeria</a></li>
-          <li><a href="./formulario.html">Formulario</a></li>
+          <li><a href="./formulario.html">Contacto</a></li>
         </ul>
       </nav>
     </header>
 
     <div class="video-container">
       <video autoplay muted loop id="background-video">
-        <source src="./fotos/106674-673786323_small.mp4" type="video/mp4" />
+        <source src="./fotos/SM-1comp.mp4" type="video/mp4" />
         Seu navegador não suporta a tag de vídeo.
       </video>
       <div class="video-overlay">
-        <h1>Sua Frase Aqui</h1>
-        <p>Algum texto descritivo adicional aqui para complementar o título.</p>
+        <h1>Transformando Espaços com Elegância e Durabilidade</h1>
+        <p>Na nossa empresa de caixilharia, combinamos inovação e tradição para oferecer produtos que redefinem os limites do design e da funcionalidade.</p>
       </div>
     </div>
+
+    <section id="informacoes">
+      <div class="container">
+        <h2>Projetos de Design Sob Medida para Você</h2>
+      
 
     <section id="home">
       <div class="content">
@@ -77,13 +83,30 @@
         <div class="text-content">
           <h1>Nossos Produtos</h1>
           <p>
-            Descubra os nossos produtos e serviços incríveis. Cada item foi
+            Descubra os nossos produtos e serviços. Cada item foi
             criado com cuidado e atenção aos detalhes para oferecer a melhor
             qualidade.
           </p>
         </div>
       </div>
     </section>
+
+    <section id="informacoes">
+      <div class="container">
+        <h2>Saiba Mais Sobre Nossos Projetos</h2>
+        <p>
+          Descubra como nossos projetos de design inovadores combinam estética, funcionalidade e sofisticação. Nossa equipe de especialistas está pronta para transformar suas ideias em realidade, com soluções personalizadas que elevam cada espaço ao seu máximo potencial. Entre em contato conosco e explore a diferença que um design de excelência pode fazer.
+        </p>
+        <div class="imagem-container">
+          <img
+            src="./fotos/Sem Título-122.avif"
+            alt="Imagem Central"
+            class="imagem-central"
+          />
+        </div>
+      </div>
+    </section>
+    
 
     <div class="cta-btn2-container">
       <a href="./produtos.html" class="cta-btn2">Ver Mais</a>
@@ -93,24 +116,21 @@
       <div class="fobras">
         <h1>Resultados</h1>
         <p>Descubra os nossos produtos e serviços incríveis.</p>
-        <div class="image-container" id="carousel-obras">
+        <div class="carousel-container">
           <button class="prev-btn">&#10094;</button>
-          <div class="carousel-images">
-            <img
-              src="./fotos/OBRA 2 - ANÇÃ/direita.jpg"
-              alt="Imagem 1"
-              class="static-image"
-            />
-            <img
-              src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg"
-              alt="Imagem 2"
-              class="static-image"
-            />
-            <img
-              src="./fotos/OBRA 2 - ANÇÃ/centro.jpg"
-              alt="Imagem 1"
-              class="static-image"
-            />
+          <div class="carousel-track-container">
+            <ul class="carousel-track">
+              <li class="carousel-slide">
+                <img src="./fotos/OBRA 2 - ANÇÃ/direita.jpg" alt="Imagem 1">
+              </li>
+              <li class="carousel-slide">
+                <img src="./fotos/OBRA 1 - PAREDES/DSC06861.jpg" alt="Imagem 2">
+              </li>
+              <li class="carousel-slide">
+                <img src="./fotos/TALVEZ-CAPA-2.jpg" alt="Imagem 3">
+              </li>
+              <!-- Adicione mais imagens se quiser -->
+            </ul>
           </div>
           <button class="next-btn">&#10095;</button>
         </div>
@@ -119,6 +139,8 @@
         </div>
       </div>
     </section>
+    
+    
 
     <section id="sobre">
       <div class="content1">
@@ -131,23 +153,11 @@
           </p>
           <a href="./sobre.html" class="btn-primary">Sobre Nós</a>
         </div>
-        <img src="./fotos/OBRA 2 - ANÇÃ/portaa.jpg" alt="Linha Premium" />
+        <img src="./fotos/DSC08126-2.jpg" alt="Linha Premium" />
       </div>
     </section>
 
     <!-- Novo Título, Texto e Botão -->
-    <section id="informacoes">
-      <div class="container">
-        <h2>Saiba Mais Sobre Nossos Projetos</h2>
-        <p>
-          Para mais informações sobre nossos produtos e serviços, entre em
-          contato conosco.
-        </p>
-        <div class="cta-btn2-container">
-          <a href="./formulario.html" class="cta-btn2">Entre em Contato</a>
-        </div>
-      </div>
-    </section>
 
     <section id="contato">
       <div class="content">
@@ -155,6 +165,8 @@
           <h2>Contato</h2>
           <p>Email: contato@meusite.com</p>
           <p>Telefone: (00) 1234-5678</p>
+
+          
           <div class="social-media">
             <a
               href="https://www.facebook.com"
@@ -182,15 +194,10 @@
             </a>
           </div>
         </div>
-        <div class="image">
-          <img src="./fotos/ebook_11899176.png" alt="Contato" />
-        </div>
       </div>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
-    </footer>
+  
 
     <!-- Botão do WhatsApp Flutuante -->
     <a

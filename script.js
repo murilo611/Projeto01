@@ -23,43 +23,68 @@ document.addEventListener("DOMContentLoaded", function () {
     setInterval(showNextImageHome, 2000); // Mudar de imagem a cada 2 segundos
   }
 
-  // Função para inicializar o carrossel da seção "obras"
-  function initCarouselObras() {
-    let currentIndexObras = 0;
-    const prevBtn = document.querySelector("#carousel-obras .prev-btn");
-    const nextBtn = document.querySelector("#carousel-obras .next-btn");
-    const carouselImages = document.querySelector(
-      "#carousel-obras .carousel-images"
-    );
-    const images = document.querySelectorAll("#carousel-obras .static-image");
-    const totalImagesObras = images.length;
+  document.addEventListener("DOMContentLoaded", () => {
+    const track = document.querySelector(".carousel-track");
+    const slides = Array.from(track.children);
+    const nextButton = document.querySelector(".next-btn");
+    const prevButton = document.querySelector(".prev-btn");
+    let currentIndex = 0;
 
-    function updateCarouselObras() {
-      carouselImages.style.transform = `translateX(-${
-        currentIndexObras * 100
-      }%)`;
-    }
+    // Definir a largura exata de cada slide
+    const slideWidth = slides[0].getBoundingClientRect().width;
 
-    prevBtn.addEventListener("click", () => {
-      if (currentIndexObras > 0) {
-        currentIndexObras--;
-      } else {
-        currentIndexObras = totalImagesObras - 1; // Voltar à última imagem
+    // Função para posicionar os slides um ao lado do outro
+    const setSlidePosition = (slide, index) => {
+      slide.style.left = slideWidth * index + "px";
+    };
+    slides.forEach(setSlidePosition);
+
+    // Função para mover o carrossel
+    const moveToSlide = (currentIndex) => {
+      const amountToMove = slideWidth * currentIndex;
+      track.style.transform = "translateX(-" + amountToMove + "px)";
+    };
+
+    // Evento para o botão "Próximo"
+    nextButton.addEventListener("click", () => {
+      if (currentIndex < slides.length - 2.5) {
+        currentIndex += 1;
+        moveToSlide(currentIndex);
       }
-      updateCarouselObras();
     });
 
-    nextBtn.addEventListener("click", () => {
-      if (currentIndexObras < totalImagesObras - 1) {
-        currentIndexObras++;
-      } else {
-        currentIndexObras = 0; // Voltar à primeira imagem
+    // Evento para o botão "Anterior"
+    prevButton.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex -= 1;
+        moveToSlide(currentIndex);
       }
-      updateCarouselObras();
     });
-  }
+  });
 
   // Inicializar os carrosséis
   initCarouselHome();
   initCarouselObras();
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  const imagem = document.querySelector(".imagem-central");
+  const texto = document.querySelector(".texto-sobre-imagem");
+
+  const options = {
+    root: null,
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver(function (entries, observer) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        imagem.classList.add("aparecer");
+        texto.classList.add("aparecer");
+        observer.unobserve(entry.target); // Para parar de observar após a animação
+      }
+    });
+  }, options);
+
+  observer.observe(imagem);
 });
