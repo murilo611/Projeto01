@@ -1,681 +1,438 @@
-/* Estilos Gerais */
-body,
-html {
+body {
+  font-family: "Arial", sans-serif;
   margin: 0;
   padding: 0;
-  width: 100%;
-  height: 100%;
-  font-family: "Poppins", serif;
-  font-weight: 300;
-  font-style: italic;
-  background-color: #000; /* Fundo preto */
-  color: #fdfdfd; /* Texto branco */
-  overflow-x: hidden;
+  background-color: #f4f4f4;
 }
 
-/* Estilos do Cabeçalho */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 3px;
-  background: rgba(0, 0, 0, 0.8); /* Fundo do cabeçalho */
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.logo img {
-  width: 80px; /* Ajuste a largura conforme necessário */
-  height: auto; /* Mantém a proporção da imagem */
-  display: block;
-  margin: 0 auto; /* Centraliza a imagem horizontalmente */
-}
-
-.menu-toggle {
-  display: flex;
-  flex-direction: column;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background-color: #fff;
-  margin: 4px 0;
-  transition: 0.3s;
-}
-
-.nav {
-  display: none;
-  justify-content: flex-start; /* Alinhar o menu à esquerda */
-  width: 100%;
-}
-
-.nav.active {
-  display: flex;
-}
-
-.nav ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-}
-
-.nav ul li {
-  margin: 0 15px;
-}
-
-.nav ul li a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 18px;
-  transition: color 0.3s;
-}
-
-.nav ul li a:hover {
-  color: #122594;
-}
-
-/* Estilos responsivos para Menu Toggle e Nav */
-@media (max-width: 768px) {
-  .nav {
-    flex-direction: column;
-    position: fixed;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.9);
-  }
-  .nav ul {
-    flex-direction: column;
-  }
-  .nav ul li {
-    margin: 10px 0;
-  }
-}
-
-/* Estilos do Container de Vídeo */
-.video-container {
+.banner {
   position: relative;
   width: 100%;
-  height: 100vh; /* Ocupa toda a altura da viewport */
+  height: 100vh;
   overflow: hidden;
 }
 
-#background-video {
+.background-image {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-}
-.video-container::after {
-  content: ""; /* Necessário para pseudo-elementos */
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 150px; /* Ajuste a altura do gradiente conforme necessário */
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #000000 100%);
-  pointer-events: none; /* Permite que eventos de mouse passem para o vídeo */
+  animation: zoomOut 30s infinite;
+  z-index: -1;
 }
 
-.video-overlay {
-  position: absolute;
-  top: 10%; /* Ajuste conforme necessário */
-  left: 0%; /* Ajuste conforme necessário */
-  transform: translate(0, 0); /* Ajuste conforme necessário */
-  z-index: 2; /* Garantir que o texto fique acima do vídeo */
-  width: auto; /* Ajuste conforme necessário */
-  max-width: 300px; /* Limitar a largura do contêiner */
-  padding: 10px; /* Espaçamento interno */
-  border-radius: 5px; /* Bordas arredondadas */
-}
-
-.video-overlay h1 {
-  color: #eeebeb;
-  font-size: 2rem; /* Ajustar o tamanho da fonte conforme necessário */
-  margin-bottom: 10px;
-  text-align: left; /* Alinhar o texto à esquerda */
-}
-
-.video-overlay p {
-  color: #f7f7f7;
-  font-size: 1rem; /* Ajustar o tamanho da fonte conforme necessário */
-  margin-bottom: 10px;
-  text-align: left; /* Alinhar o texto à esquerda */
-}
-
-/* Seção "Home" */
-section#home {
-  padding: 50px 0;
-  background-color: #000;
-  color: #f5f5f5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* Estilos de Conteúdo */
-.content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 80%;
-  margin: 0 auto;
-  flex-wrap: wrap;
-}
-
-/* Estilos do Carrossel */
-.carousel {
-  position: relative;
-  width: 100%;
-  max-width: 700px;
-  margin: 0 auto;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.carousel img {
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
-  display: none;
-  transition: opacity 0.5s ease-in-out;
-  background-color: #000;
-}
-
-.carousel img.active {
-  display: block;
-  opacity: 1;
-}
-
-/* Estilos do Texto */
-.text-content {
-  flex: 1;
-  padding: 20px;
-  text-align: center;
-}
-
-.text-content h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-.text-content p {
-  font-size: 1.2em;
-  margin-bottom: 20px;
-}
-
-/* Estilos da Imagem */
-.image-container {
-  flex: 0 0 250px;
-  margin-right: 20px;
-}
-
-.image-container img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Estilos do Botão */
-.cta-btn2 {
-  display: flex; /* Usar Flexbox para centralizar conteúdo */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  width: 200px; /* Largura aumentada para forma cilíndrica */
-  height: 60px; /* Altura definida */
-  background-color: #fff; /* Fundo branco */
-  color: #000; /* Texto preto */
-  text-decoration: none; /* Remove sublinhado */
-  border: 2px solid #000; /* Adiciona borda preta de 2px */
-  border-radius: 30px; /* Arredonda as bordas para efeito cilíndrico */
-  font-weight: bold; /* Texto em negrito */
-  font-size: 16px; /* Tamanho da fonte */
-  box-shadow: none; /* Remove sombras */
-  padding: 0; /* Remove padding */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* Transições suaves */
-}
-
-.cta-btn2:hover {
-  background-color: #e0e0e0; /* Muda a cor de fundo ao passar o mouse */
-  transform: scale(1.02); /* Leve aumento ao passar o mouse */
-}
-
-.cta-btn2:active {
-  transform: scale(1); /* Retorna ao tamanho original ao clicar */
-}
-
-/* Centralizar o contêiner do botão */
-.cta-btn2-container {
-  display: flex; /* Flexbox para centralização */
-  justify-content: center; /* Centraliza horizontalmente */
-  width: 100%; /* Ocupa toda a largura disponível */
-  margin-top: 20px; /* Espaço superior */
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
-    align-items: center;
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
   }
-
-  .carousel img {
-    height: 300px;
-  }
-
-  .text-content {
-    padding: 10px;
-    text-align: center;
+  100% {
+    transform: scale(1.2);
   }
 }
 
-@media (max-width: 480px) {
-  .image-container {
-    order: 2;
-  }
-
-  .text-content {
-    order: 1;
-    width: 100%;
-    padding: 10px;
-    text-align: center;
-  }
-
-  .carousel {
-    order: 3;
-  }
-
-  .text-content h1 {
-    font-size: 1.5em;
-  }
-
-  .text-content p {
-    font-size: 1em;
-  }
-
-  .cta-btn2-container {
-    order: 4;
-    margin-top: 20px;
-  }
-}
-
-/* Estilos da seção */
-#informacoes {
-  padding: 80px 0;
-  text-align: center;
-  background-color: #000; /* Opcional: definir um fundo para contraste */
-}
-
-#informacoes .container {
-  width: 90%;
-  margin: 0 auto;
-}
-
-#informacoes h2 {
-  font-size: 2.5em;
-  margin-bottom: 20px;
-  color: #fff;
-}
-
-#informacoes p {
-  font-size: 1.2em;
-  margin-bottom: 40px;
-  color: #fff;
-}
-
-/* Container da imagem */
-.imagem-container {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.imagem-central {
-  width: 100%;
-  height: auto;
-  display: block;
-  opacity: 0; /* Inicia invisível para a animação */
-  transform: translateY(50px); /* Inicia deslocada para baixo */
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-}
-
-/* Classe para ativar a animação */
-.aparecer {
-  opacity: 1;
-  transform: translateY(0); /* Move para a posição original */
-}
-
-/* Quando a classe 'aparecer' é adicionada */
-.aparecer {
-  opacity: 1;
-}
-
-/* Reset básico */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-section#obras {
-  padding: 0;
-  margin: 0;
-}
-
-.fobras {
-  text-align: center;
-  padding: 20px 0; /* Espaçamento vertical */
-}
-
-.carousel-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  margin: 0 auto;
-}
-
-.carousel-track-container {
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-slide {
-  min-width: calc(100% / 2.5); /* Exibe 2.5 imagens */
-  flex: 0 0 calc(100% / 2.5);
-}
-
-.carousel-slide img {
-  width: 100%;
-  display: block;
-}
-
-/* Botões de navegação */
-.prev-btn,
-.next-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #fff;
-  font-size: 2rem;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 100;
-}
-
-.prev-btn {
-  left: 10px;
-}
-
-.next-btn {
-  right: 10px;
-}
-
-/* Estilo Geral */
-#sobre {
-  padding: 60px 20px; /* Espaçamento interno */
-  background: #000; /* Fundo para garantir contraste */
-  font-family: "Arial", sans-serif; /* Fonte limpa */
-}
-
-/* Container Principal */
-.content1 {
-  position: relative; /* Necessário para posicionamento absoluto dos elementos internos */
-  width: 100%;
-  max-width: 1200px;
-  height: 450px; /* Altura da seção */
-  margin: 20px auto;
-
-  border-radius: 16px; /* Bordas arredondadas */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5); /* Sombra moderna */
-}
-
-.content1 img {
-  position: absolute; /* Para que a imagem preencha o container */
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Garante que a imagem preencha o container sem distorcer */
-  z-index: 1; /* Define a camada da imagem */
-}
-
-/* Overlay com Texto */
 .overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2; /* Fica acima da imagem */
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  color: white;
   text-align: center;
-  background: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
-  color: #fff; /* Texto branco */
+}
+
+.button {
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+main {
+  padding: 2em;
+  background-color: #000;
+}
+
+.intro-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+
+.intro-section .text-content {
+  flex: 1;
+  padding: 1em;
+}
+
+.intro-section .text-content h2 {
+  color: #f4f4f4;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.intro-section .text-content p {
+  color: #f4f4f4;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+.intro-section .image-content {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
+}
+
+.intro-section .image-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.accommodation-options {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.accommodation-options .card {
+  background-color: rgb(0, 0, 0);
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 1em;
+  flex: 1;
+  max-width: calc(33% - 1em);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.accommodation-options .card img {
+  max-width: 100%;
+  border-radius: 10px;
+  height: auto;
+}
+
+.accommodation-options .card h3 {
+  color: #f4f4f4;
+  font-size: 1.5em;
+  margin: 1em 0;
+}
+
+.accommodation-options .card p {
+  color: #f4f4f4;
+  font-size: 1.1em;
+}
+
+/*segura aqui !!! */
+.carousel-container {
+  display: flex;
+  width: 50%;
+}
+.carousel-slide .slide-image img {
+  width: 50%; /* Ajuste a largura conforme necessário */
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.carousel-track-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+}
+
+#obras .fobras {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 20px;
 }
 
-.overlay h2 {
-  font-size: 2.5rem;
+.text-container {
+  width: 45%;
+}
+
+#obras h1 {
+  color: #f4f4f4;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#obras p {
+  color: #f4f4f4;
+  font-size: 18px;
   margin-bottom: 20px;
-  color: #f5f5f5; /* Destaque dourado */
-  text-transform: uppercase;
-  letter-spacing: 2px;
 }
 
-.overlay p {
-  font-size: 1rem;
-  line-height: 1.8;
-  margin-bottom: 30px;
-  color: #ddd;
+.cta-btn2-container {
+  text-align: left;
 }
 
-/* Botão Primário */
-.btn-primary {
+.cta-btn2 {
   display: inline-block;
-  padding: 12px 30px;
-  background-color: #f3f3f3;
-  color: #000;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
   text-decoration: none;
-  border-radius: 8px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(255, 204, 0, 0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.btn-primary:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(255, 204, 0, 0.6);
+.cta-btn2:hover {
+  background-color: #0056b3;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .content1 {
-    height: 300px;
-  }
+/*segura aqui !!! */
 
-  .overlay h2 {
-    font-size: 2rem;
-  }
-
-  .overlay p {
-    font-size: 0.9rem;
-  }
-
-  .btn-primary {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
+.family-suite {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+  padding: 1em;
+  background-color: #000000;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 480px) {
-  .content1 {
-    height: 250px;
-  }
-
-  .overlay h2 {
-    font-size: 1.5rem;
-  }
-
-  .overlay p {
-    font-size: 0.8rem;
-  }
+.family-suite .text-content {
+  flex: 1;
+  padding: 1em;
 }
 
-#contato {
-  padding: 50px 0; /* Espaçamento vertical */
-  background-color: #000000; /* Fundo escuro */
-  color: #fcfcfc; /* Cor do texto */
+.family-suite .text-content h2 {
+  color: #f4f4f4;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  font-family: "Georgia", serif;
 }
 
-#contato .content {
-  display: flex; /* Usar Flexbox */
-  align-items: center; /* Alinhar itens verticalmente no centro */
-  justify-content: space-between; /* Espaçar itens uniformemente */
-  width: 80%; /* Garantir que o contêiner ocupe 80% da largura */
-  margin: 0 auto; /* Centralizar o contêiner */
+.family-suite .text-content p {
+  color: #f4f4f4;
+  font-size: 1.2em;
+  line-height: 1.5;
+  font-family: "Georgia", serif;
 }
 
-#contato .text {
-  flex: 1; /* Fazer o texto ocupar 1 unidade de espaço flexível */
-  display: flex; /* Usar Flexbox */
-  flex-direction: column; /* Direção da coluna */
-  justify-content: center; /* Centralizar verticalmente */
-  margin-right: 20px; /* Adicionar margem à direita para afastar do contêiner das imagens */
+.family-suite .video-content {
+  flex: 1;
+  padding: 1em;
+  text-align: center;
 }
 
-#contato .text h2 {
-  font-size: 2em; /* Tamanho da fonte do título */
-  margin-bottom: 20px; /* Espaço inferior do título */
-  text-align: left; /* Alinhar texto à esquerda */
+.family-suite .background-video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 0.5em;
 }
 
-#contato .text p {
-  font-size: 1.2em; /* Tamanho da fonte dos parágrafos */
-  margin-bottom: 10px; /* Espaço inferior dos parágrafos */
-  text-align: left; /* Alinhar texto à esquerda */
+.family-suite .video-content p {
+  font-size: 1em;
+  color: #ffffff;
+  font-family: "Georgia", serif;
 }
 
-#contato .social-media {
-  display: flex; /* Usar Flexbox */
-  gap: 10px; /* Espaçamento entre ícones */
-  margin-left: 20px; /* Adicionar margem à esquerda para alinhamento */
-  align-items: center; /* Alinhar itens verticalmente no centro */
-}
-
-#contato .social-icon img {
-  width: 40px; /* Largura dos ícones */
-  height: 40px; /* Altura dos ícones */
-  transition: transform 0.3s ease; /* Transição suave ao passar o mouse */
-}
-
-#contato .social-icon img:hover {
-  transform: scale(1.1); /* Aumentar ícone ao passar o mouse */
-}
-
-#contato .image {
-  flex: 1; /* Fazer a imagem ocupar 1 unidade de espaço flexível */
-  text-align: center; /* Centralizar a imagem */
-}
-
-#contato .image img {
-  max-width: 50%; /* Garantir que a imagem ocupe 50% da largura */
-  border-radius: 8px; /* Bordas arredondadas */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
-}
-
-/* Media Queries para Responsividade */
-@media (max-width: 768px) {
-  #contato .content {
-    flex-direction: column; /* Empilhar os itens verticalmente */
-    align-items: center; /* Centralizar itens no eixo vertical */
-  }
-
-  #contato .text {
-    text-align: center; /* Centralizar texto em telas menores */
-  }
-
-  #contato .image {
-    margin-top: 20px; /* Adicionar margem superior à imagem */
-  }
-}
-
-/* Estilos para o mapa */
-.map-thumbnail {
-  width: 200px; /* Largura desejada do quadrado */
-  height: 200px; /* Altura igual para formar um quadrado */
+.carro-sell-track-container {
   overflow: hidden;
+  width: 100vw;
+  height: 70vh; /* Ajusta a altura conforme necessário */
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
 }
 
-.map-thumbnail img {
+.carro-sel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: calc(
+    100vw * 3
+  ); /* Ajuste a largura para acomodar 3 slides parcialmente */
+}
+
+.carro-sel-slide {
+  flex: 0 0 calc(40vw - 10px); /* Cada slide ocupará cerca de 40% da largura da janela de visualização */
+  height: 100%;
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Ajusta a margem para criar o espaço entre slides */
+}
+
+.carro-sel-slide img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Ajusta a imagem sem distorcer */
-  border-radius: 8px;
-  transition: transform 0.3s ease;
+  object-fit: cover;
+  margin: 0;
 }
 
-.map-thumbnail img:hover {
-  transform: scale(1.05); /* Efeito de zoom ao passar o mouse */
+.fim-aplicação {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  justify-content: center;
+}
+
+.carro-sell {
+  display: flex;
+  align-items: center;
+  width: 100vw;
+  height: 70%;
+}
+
+#aplicação h1 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#aplicação p {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.prev-btn,
+.next-btn11 {
   cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #333;
 }
 
-/* Ajustes para telas menores */
-@media (max-width: 768px) {
-  #contato .content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .map-thumbnail {
-    margin-top: 20px;
-  }
+.cta-btn2 {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  color: rgb(7, 7, 7);
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
 }
 
-.whatsapp-float {
-  position: fixed; /* Fixo na tela */
-  bottom: 20px; /* Distância da borda inferior */
-  right: 20px; /* Distância da borda direita */
-  z-index: 100; /* Garantir que fique acima de outros elementos */
-  width: 60px; /* Largura do ícone */
-  height: 60px; /* Altura do ícone */
-  display: flex; /* Flexbox */
-  align-items: center; /* Alinhar itens verticalmente no centro */
-  justify-content: center; /* Centralizar itens horizontalmente */
-  background-color: #80b19288; /* Cor de fundo do WhatsApp */
-  border-radius: 50%; /* Forma circular */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra leve */
-  transition: transform 0.3s ease; /* Transição suave */
+.cta-btn11-container {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px; /* Ajusta a distância superior */
 }
 
-.whatsapp-float img {
-  width: 30px; /* Ajustar a largura do ícone */
-  height: 30px; /* Ajustar a altura do ícone */
+.press-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
 }
 
-.whatsapp-float:hover {
-  transform: scale(1.1); /* Aumentar o ícone ao passar o mouse */
+.press-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  z-index: -1;
+}
+
+.press-content {
+  position: relative;
+  z-index: 1;
+}
+
+.press-title {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  font-family: "Times New Roman", serif;
+}
+
+.press-text-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.press-text {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.press-source {
+  font-style: italic;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 20px;
+  background-color: #000000;
+  border-top: 5px solid #fffdfd; /* Adiciona uma borda superior */
+  border-bottom: 5px solid #fffdfd; /* Adiciona uma borda inferior */
+}
+
+.info-box {
+  flex: 1;
+  margin: 0 20px;
+  padding: 20px;
+  background-color: #000000; /* Fundo branco para as caixas de informação */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra sutil */
+  text-align: center;
+  border-radius: 10px; /* Adiciona bordas arredondadas */
+}
+
+.info-box h3 {
+  margin-bottom: 15px;
+  font-size: 1.8em;
+  color: #f1f1f1; /* Cor do título */
+}
+
+.info-box p {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: #ffffff; /* Cor do texto */
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  display: inline-block;
+}
+
+.social-icons img {
+  width: 40px;
+  height: 40px;
+  transition: transform 0.3s; /* Adiciona uma transição suave ao passar o mouse */
+}
+
+.social-icons img:hover {
+  transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
 }
